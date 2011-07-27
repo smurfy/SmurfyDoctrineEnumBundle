@@ -87,7 +87,17 @@ Create your own class, lets say for salutation
         }
     }
 
-Thats it.
+After that you must register the new Type that Doctrine knows about it.
+In your config.yml:
+
+    # Doctrine Configuration
+    doctrine:
+        dbal:
+            .....
+            charset:  UTF8
+            types:
+                SalutationType: Namespace\YourOwnBundle\Entity\SalutationType
+
 
 You now can use the type (and its validator) inside your other Entities.
 
