@@ -27,7 +27,6 @@ Add SmurfyDoctrineEnumBundle to your vendor/bundles/ dir
 ---------------------------------------------
 
 Using the vendors script
-~~~~~~~~~~~~~~~~~~~~~~~~
 
 Add the following lines in your ``deps`` file::
 
@@ -40,14 +39,11 @@ Run the vendors script::
     ./bin/vendors install
 
 Using submodules
-~~~~~~~~~~~~~~~~
 
     $ git submodule add git://github.com/smurfy/SmurfyDoctrineEnumBundle.git vendor/bundles//Smurfy/DoctrineEnumBundle
 
 Add the Smurfy namespace to your autoloader
 ----------------------------------------
-
-::
 
     // app/autoload.php
     $loader->registerNamespaces(array(
@@ -57,8 +53,6 @@ Add the Smurfy namespace to your autoloader
 
 Add UserBundle to your application kernel
 -----------------------------------------
-
-::
 
     // app/AppKernel.php
 
@@ -77,7 +71,6 @@ Usage
 
 Create your own class, lets say for salutation
 
-::
     use Smurfy\DoctrineEnumBundle\DBAL\Types\DoctrineEnumTypeAbstract;
 
     class SalutationType extends DoctrineEnumTypeAbstract
@@ -98,7 +91,6 @@ Thats it.
 
 You now can use the type (and its validator) inside your other Entities.
 
-::
     use Smurfy\DoctrineEnumBundle\Validator as EnumAssert;
     ...
     /**
@@ -113,10 +105,10 @@ You now can use the type (and its validator) inside your other Entities.
 
 You now can set values in you Entity.
 
-$entity->setSalutation(SalutationType::SALUTATION_MR);
+    $entity->setSalutation(SalutationType::SALUTATION_MR);
 
 If you try setting it to something else and you validate the Entity, an error will be raised.
 
 You also can use it in your forms
 
-$builder->add('salutation', 'choice', array('choices' => SalutationType::getChoices()));
+    $builder->add('salutation', 'choice', array('choices' => SalutationType::getChoices()));
