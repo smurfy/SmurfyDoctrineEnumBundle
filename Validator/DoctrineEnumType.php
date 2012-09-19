@@ -14,6 +14,7 @@ use Symfony\Component\Validator\Constraints\Choice;
 
 /**
  * Doctrine Enum Type Constraint
+ * @Annotation
  */
 class DoctrineEnumType extends Choice
 {
