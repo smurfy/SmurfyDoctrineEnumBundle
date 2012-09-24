@@ -35,7 +35,7 @@ class DoctrineEnumTypeValidator extends ChoiceValidator
         }
 
         $entity = $constraint->entity;
-        $constraint->choices = $entity::getChoices();
+        $constraint->choices = array_keys($entity::getChoices());
         return parent::validate($value, $constraint);
     }
 }
