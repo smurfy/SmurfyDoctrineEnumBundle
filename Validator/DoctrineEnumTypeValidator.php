@@ -28,7 +28,7 @@ class DoctrineEnumTypeValidator extends ChoiceValidator
      * 
      * @return boolean
      */
-    public function isValid($value, Constraint $constraint)
+    public function validate($value, Constraint $constraint)
     {
         if (!$constraint->entity) {
             throw new ConstraintDefinitionException('Entity not specified');
@@ -36,6 +36,6 @@ class DoctrineEnumTypeValidator extends ChoiceValidator
 
         $entity = $constraint->entity;
         $constraint->choices = $entity::getChoices();
-        return parent::isValid($value, $constraint);
+        return parent::validate($value, $constraint);
     }
 }
